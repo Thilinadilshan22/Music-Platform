@@ -1,0 +1,189 @@
+import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { Music, TrendingUp, Headphones, Sparkles } from 'lucide-react';
+import { Navigation } from '@/components/shared/Navigation';
+import { TrackCard } from '@/components/music/TrackCard';
+import { PlaylistCard } from '@/components/music/PlaylistCard';
+import {
+    featuredTracks,
+    trendingTracks,
+    featuredPlaylists,
+    genres,
+    Genre
+} from '@/data/mockMusicData';
+
+export function MusicPage() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 pb-32">
+            {/* Navigation */}
+            <Navigation isLoaded={isLoaded} />
+
+            {/* Hero Section */}
+            <section className="relative overflow-hidden px-4 sm:px-6 md:px-8 pt-8 pb-16">
+                {/* Animated Background Orbs */}
+                <motion.div
+                    animate={{
+                        x: [0, 50, 0],
+                        y: [0, -30, 0],
+                        scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-pink-300/20 rounded-full blur-3xl"
+                />
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-12"
+                    >
+                        <motion.div
+                            className="inline-block mb-4"
+                            whileHover={{ scale: 1.05, rotate: 5 }}
+                        >
+                            <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl flex items-center justify-center shadow-2xl">
+                                <Headphones className="w-10 h-10 text-white" />
+                            </div>
+                        </motion.div>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
+                            Discover Your Sound
+                        </h1>
+                        <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+                            Millions of tracks, endless possibilities. Stream the music you love.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Featured Tracks */}
+            <section className="px-4 sm:px-6 md:px-8 mb-16">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                        transition={{ delay: 0.2 }}
+                        className="flex items-center gap-3 mb-6"
+                    >
+                        <Sparkles className="w-6 h-6 text-purple-600" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                            Featured Tracks
+                        </h2>
+                    </motion.div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                        {featuredTracks.map((track, index) => (
+                            <TrackCard key={track.id} track={track} index={index} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Genres */}
+            <section className="px-4 sm:px-6 md:px-8 mb-16">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                        transition={{ delay: 0.3 }}
+                        className="flex items-center gap-3 mb-6"
+                    >
+                        <Music className="w-6 h-6 text-purple-600" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                            Browse by Genre
+                        </h2>
+                    </motion.div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {genres.map((genre, index) => (
+                            <GenreCard key={genre.id} genre={genre} index={index} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Trending Now */}
+            <section className="px-4 sm:px-6 md:px-8 mb-16">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                        transition={{ delay: 0.4 }}
+                        className="flex items-center gap-3 mb-6"
+                    >
+                        <TrendingUp className="w-6 h-6 text-purple-600" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                            Trending Now
+                        </h2>
+                    </motion.div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {trendingTracks.map((track, index) => (
+                            <TrackCard key={track.id} track={track} index={index} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured Playlists */}
+            <section className="px-4 sm:px-6 md:px-8 mb-16">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                        transition={{ delay: 0.5 }}
+                        className="flex items-center gap-3 mb-6"
+                    >
+                        <Music className="w-6 h-6 text-purple-600" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                            Featured Playlists
+                        </h2>
+                    </motion.div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {featuredPlaylists.map((playlist, index) => (
+                            <PlaylistCard key={playlist.id} playlist={playlist} index={index} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+}
+
+// Genre Card Component
+interface GenreCardProps {
+    genre: Genre;
+    index: number;
+}
+
+function GenreCard({ genre, index }: GenreCardProps) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.05 }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            className={`relative overflow-hidden rounded-2xl p-6 cursor-pointer bg-gradient-to-br ${genre.color} shadow-lg hover:shadow-2xl transition-all h-32`}
+        >
+            <div className="relative z-10">
+                <div className="text-4xl mb-2">{genre.icon}</div>
+                <h3 className="text-xl font-black text-white drop-shadow-lg">
+                    {genre.name}
+                </h3>
+            </div>
+
+            {/* Decorative Pattern */}
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white rounded-full" />
+                <div className="absolute -right-8 -top-8 w-32 h-32 bg-white rounded-full" />
+            </div>
+        </motion.div>
+    );
+}
