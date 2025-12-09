@@ -14,6 +14,7 @@ export function Footer() {
     const quickLinks = [
         { name: 'Home', to: '/' },
         { name: 'Music', to: '/music' },
+        { name: 'Videos', to: '/videos' },
     ];
 
     return (

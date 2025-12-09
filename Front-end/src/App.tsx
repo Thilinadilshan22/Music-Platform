@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from '@/features/home/HomePage';
 import { LoginPage } from '@/features/auth/LoginPage';
 import { MusicPage } from '@/features/music/MusicPage';
+import { VideoPage } from '@/features/videos/VideoPage';
 import { MusicProvider } from '@/contexts/MusicContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
 
@@ -13,6 +14,7 @@ export default function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/music" element={<MusicPage />} />
+                    <Route path="/videos" element={<VideoPage />} />
                 </Routes>
                 <MusicPlayer />
             </BrowserRouter>
