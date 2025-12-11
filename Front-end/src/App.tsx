@@ -3,6 +3,7 @@ import { HomePage } from '@/features/home/HomePage';
 import { LoginPage } from '@/features/auth/LoginPage';
 import { MusicPage } from '@/features/music/MusicPage';
 import { VideoPage } from '@/features/videos/VideoPage';
+import { EventsPage } from '@/features/events/EventsPage';
 import { MusicProvider } from '@/contexts/MusicContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
 
@@ -15,6 +16,7 @@ export default function App() {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/music" element={<MusicPage />} />
                     <Route path="/videos" element={<VideoPage />} />
+                    <Route path="/events" element={<EventsPage />} />
                 </Routes>
                 <MusicPlayer />
             </BrowserRouter>
