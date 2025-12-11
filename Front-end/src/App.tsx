@@ -6,22 +6,28 @@ import { VideoPage } from '@/features/videos/VideoPage';
 import { EventsPage } from '@/features/events/EventsPage';
 import { ArtistsPage } from '@/features/artists/ArtistsPage';
 import { MusicProvider } from '@/contexts/MusicContext';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
+import { MainLayout } from '@/components/shared/MainLayout';
 
 export default function App() {
     return (
-        <MusicProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/music" element={<MusicPage />} />
-                    <Route path="/videos" element={<VideoPage />} />
-                    <Route path="/events" element={<EventsPage />} />
-                    <Route path="/artists" element={<ArtistsPage />} />
-                </Routes>
-                <MusicPlayer />
-            </BrowserRouter>
-        </MusicProvider>
+        <ThemeProvider>
+            <MusicProvider>
+                <BrowserRouter>
+                    <MainLayout>
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/login" element={<LoginPage />} />
+                            <Route path="/music" element={<MusicPage />} />
+                            <Route path="/videos" element={<VideoPage />} />
+                            <Route path="/events" element={<EventsPage />} />
+                            <Route path="/artists" element={<ArtistsPage />} />
+                        </Routes>
+                        <MusicPlayer />
+                    </MainLayout>
+                </BrowserRouter>
+            </MusicProvider>
+        </ThemeProvider>
     );
 }

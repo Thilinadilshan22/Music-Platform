@@ -87,11 +87,11 @@ export function MusicPlayer() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-2xl border-t border-slate-200 shadow-2xl"
+                className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-t border-slate-200 dark:border-slate-700 shadow-2xl theme-transition"
             >
                 {/* Progress Bar */}
                 <div
-                    className="h-1 bg-slate-200 cursor-pointer group relative"
+                    className="h-1 bg-slate-200 dark:bg-slate-700 cursor-pointer group relative"
                     onClick={handleSeek}
                     onMouseDown={() => setIsDragging(true)}
                     onMouseUp={() => setIsDragging(false)}
@@ -115,11 +115,11 @@ export function MusicPlayer() {
                             whileHover={{ scale: 1.05 }}
                         />
                         <div className="min-w-0 flex-1">
-                            <h4 className="font-bold text-slate-900 truncate">{currentTrack.title}</h4>
-                            <p className="text-sm text-slate-600 truncate">{currentTrack.artist}</p>
+                            <h4 className="font-bold text-slate-900 dark:text-white truncate">{currentTrack.title}</h4>
+                            <p className="text-sm text-slate-600 dark:text-slate-400 truncate">{currentTrack.artist}</p>
                         </div>
-                        <button className="p-2 hover:bg-slate-100 rounded-full transition-colors hidden sm:block">
-                            <Heart className="w-5 h-5 text-slate-600" />
+                        <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors hidden sm:block">
+                            <Heart className="w-5 h-5 text-slate-600 dark:text-slate-400" />
                         </button>
                     </div>
 
@@ -130,8 +130,8 @@ export function MusicPlayer() {
                             <button
                                 onClick={toggleShuffle}
                                 className={`p-2 rounded-full transition-all hidden md:block ${isShuffled
-                                    ? 'bg-purple-100 text-purple-600'
-                                    : 'hover:bg-slate-100 text-slate-600'
+                                    ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400'
+                                    : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'
                                     }`}
                             >
                                 <Shuffle className="w-4 h-4" />
@@ -142,9 +142,9 @@ export function MusicPlayer() {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 onClick={playPrevious}
-                                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+                                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
                             >
-                                <SkipBack className="w-5 h-5 text-slate-700 fill-current" />
+                                <SkipBack className="w-5 h-5 text-slate-700 dark:text-slate-300 fill-current" />
                             </motion.button>
 
                             {/* Play/Pause */}
@@ -166,17 +166,17 @@ export function MusicPlayer() {
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
                                 onClick={playNext}
-                                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+                                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
                             >
-                                <SkipForward className="w-5 h-5 text-slate-700 fill-current" />
+                                <SkipForward className="w-5 h-5 text-slate-700 dark:text-slate-300 fill-current" />
                             </motion.button>
 
                             {/* Repeat */}
                             <button
                                 onClick={toggleRepeat}
                                 className={`p-2 rounded-full transition-all hidden md:block ${repeatMode !== 'off'
-                                    ? 'bg-purple-100 text-purple-600'
-                                    : 'hover:bg-slate-100 text-slate-600'
+                                    ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400'
+                                    : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'
                                     }`}
                             >
                                 {repeatMode === 'one' ? (
@@ -188,7 +188,7 @@ export function MusicPlayer() {
                         </div>
 
                         {/* Time Display */}
-                        <div className="hidden sm:flex items-center gap-2 text-xs text-slate-600">
+                        <div className="hidden sm:flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
                             <span>{formatDuration(localTime)}</span>
                             <span>/</span>
                             <span>{formatDuration(duration)}</span>
@@ -197,8 +197,8 @@ export function MusicPlayer() {
 
                     {/* Volume & Queue */}
                     <div className="flex items-center gap-3 flex-1 justify-end">
-                        <button className="p-2 hover:bg-slate-100 rounded-full transition-colors hidden lg:block">
-                            <ListMusic className="w-5 h-5 text-slate-600" />
+                        <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors hidden lg:block">
+                            <ListMusic className="w-5 h-5 text-slate-600 dark:text-slate-400" />
                         </button>
 
                         {/* Volume Control */}
@@ -209,12 +209,12 @@ export function MusicPlayer() {
                         >
                             <button
                                 onClick={toggleMute}
-                                className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+                                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
                             >
                                 {isMuted || volume === 0 ? (
-                                    <VolumeX className="w-5 h-5 text-slate-600" />
+                                    <VolumeX className="w-5 h-5 text-slate-600 dark:text-slate-400" />
                                 ) : (
-                                    <Volume2 className="w-5 h-5 text-slate-600" />
+                                    <Volume2 className="w-5 h-5 text-slate-600 dark:text-slate-400" />
                                 )}
                             </button>
 
@@ -224,7 +224,7 @@ export function MusicPlayer() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 10 }}
-                                        className="absolute bottom-full right-0 mb-2 bg-white rounded-xl shadow-2xl p-3 border border-slate-200"
+                                        className="absolute bottom-full right-0 mb-2 bg-white dark:bg-slate-800 rounded-xl shadow-2xl p-3 border border-slate-200 dark:border-slate-700"
                                     >
                                         <input
                                             type="range"
@@ -239,7 +239,7 @@ export function MusicPlayer() {
                                                 transform: 'rotate(180deg)'
                                             }}
                                         />
-                                        <div className="text-xs text-center text-slate-600 mt-2">
+                                        <div className="text-xs text-center text-slate-600 dark:text-slate-400 mt-2">
                                             {isMuted ? 0 : volume}%
                                         </div>
                                     </motion.div>

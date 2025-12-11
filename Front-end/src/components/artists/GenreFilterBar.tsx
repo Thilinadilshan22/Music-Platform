@@ -24,10 +24,10 @@ export function GenreFilterBar({ genres, activeGenre, onGenreChange }: GenreFilt
                             whileTap={{ scale: 0.95 }}
                             onClick={() => onGenreChange(genre.id)}
                             className={`
-                                relative flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg
+                                relative flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg theme-transition
                                 ${isActive
                                     ? `bg-gradient-to-r ${genre.color} text-white shadow-lg`
-                                    : 'bg-white/80 backdrop-blur-sm text-slate-700 hover:bg-white border border-white/60'
+                                    : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-800 border border-white/60 dark:border-slate-700/60'
                                 }
                             `}
                         >

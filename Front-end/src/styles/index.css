@@ -7,14 +7,58 @@
 @layer base {
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    @apply bg-white dark:bg-slate-950 theme-transition;
+  }
+
+  #root {
+    @apply bg-white dark:bg-slate-950;
   }
 }
 
 @layer utilities {
+
+  /* Gradient Text Utilities */
   .gradient-text-purple {
     background: linear-gradient(to right, #581c87, #9333ea, #581c87);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* Glassmorphism for Dark Mode */
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  /* Smooth Transitions */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Hide Scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Dark Mode Glow Effects */
+  .glow-purple-dark {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+
+  .glow-pink-dark {
+    box-shadow: 0 0 20px rgba(219, 39, 119, 0.3);
   }
 }

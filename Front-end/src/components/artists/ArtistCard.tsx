@@ -40,7 +40,7 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05, duration: 0.4 }}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="group relative bg-white/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-white/60 transition-all cursor-pointer"
+            className="group relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-white/60 dark:border-slate-700/60 transition-all cursor-pointer theme-transition"
         >
             {getTrendingBadge()}
 
@@ -52,10 +52,10 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
                     <img
                         src={artist.profileImage}
                         alt={artist.name}
-                        className="relative w-full h-full rounded-full object-cover ring-4 ring-white shadow-xl group-hover:ring-purple-300 transition-all"
+                        className="relative w-full h-full rounded-full object-cover ring-4 ring-white dark:ring-slate-800 shadow-xl group-hover:ring-purple-300 dark:group-hover:ring-purple-700 transition-all"
                     />
                     {artist.verified && (
-                        <div className="absolute bottom-1 right-1 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center ring-4 ring-white shadow-lg">
+                        <div className="absolute bottom-1 right-1 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center ring-4 ring-white dark:ring-slate-800 shadow-lg">
                             <CheckCircle className="w-5 h-5 text-white fill-current" />
                         </div>
                     )}
@@ -63,26 +63,26 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
 
                 {/* Artist Info */}
                 <div className="text-center mb-4">
-                    <h3 className="text-xl font-black text-slate-900 mb-1 line-clamp-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
+                    <h3 className="text-xl font-black text-slate-900 dark:text-white mb-1 line-clamp-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all">
                         {artist.name}
                     </h3>
-                    <p className="text-sm text-slate-600 font-semibold mb-2">{artist.primaryGenre}</p>
-                    <p className="text-xs text-slate-500">📍 {artist.country}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 font-semibold mb-2">{artist.primaryGenre}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">📍 {artist.country}</p>
                 </div>
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="bg-slate-50 rounded-xl p-3 text-center">
-                        <Users className="w-4 h-4 text-purple-600 mx-auto mb-1" />
-                        <div className="text-xs text-slate-500 mb-0.5">Followers</div>
-                        <div className="text-sm font-bold text-slate-900">
+                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center theme-transition">
+                        <Users className="w-4 h-4 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+                        <div className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">Followers</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-white">
                             {formatFollowers(artist.stats.followers)}
                         </div>
                     </div>
-                    <div className="bg-slate-50 rounded-xl p-3 text-center">
-                        <Music2 className="w-4 h-4 text-pink-600 mx-auto mb-1" />
-                        <div className="text-xs text-slate-500 mb-0.5">Tracks</div>
-                        <div className="text-sm font-bold text-slate-900">
+                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center theme-transition">
+                        <Music2 className="w- h-4 text-pink-600 dark:text-pink-400 mx-auto mb-1" />
+                        <div className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">Tracks</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-white">
                             {artist.stats.totalTracks}
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
                         whileTap={{ scale: 0.95 }}
                         onClick={handleFollowClick}
                         className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold transition-all shadow-md ${isFollowing
-                            ? 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                            ? 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600'
                             : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg'
                             }`}
                     >
@@ -107,7 +107,7 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2.5 bg-white border-2 border-purple-200 hover:border-purple-400 rounded-xl font-bold text-purple-600 transition-all shadow-md"
+                        className="px-4 py-2.5 bg-white dark:bg-slate-800 border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500 rounded-xl font-bold text-purple-600 dark:text-purple-400 transition-all shadow-md"
                     >
                         <Play className="w-4 h-4" />
                     </motion.button>

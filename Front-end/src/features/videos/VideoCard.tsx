@@ -41,7 +41,7 @@ export function VideoCard({ video, index }: VideoCardProps) {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="group"
         >
-            <div className="relative bg-white/80 backdrop-blur-xl rounded-2xl overflow-hidden border border-slate-200/60 hover:border-purple-300 hover:shadow-2xl transition-all duration-500">
+            <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-2xl transition-all duration-500 theme-transition">
                 {/* Video Player */}
                 <div className="relative aspect-video overflow-hidden bg-slate-900">
                     {/* Gradient Background */}
@@ -103,10 +103,10 @@ export function VideoCard({ video, index }: VideoCardProps) {
 
                 {/* Video Info */}
                 <div className="p-5">
-                    <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-purple-700 transition-colors line-clamp-1">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors line-clamp-1">
                         {video.title}
                     </h3>
-                    <p className="text-sm text-slate-600 font-semibold mb-4">{video.artist}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold mb-4">{video.artist}</p>
 
                     {/* Action Buttons */}
                     <div className="flex gap-2">
@@ -124,10 +124,10 @@ export function VideoCard({ video, index }: VideoCardProps) {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={handlePictureInPicture}
-                            className="px-3 py-2.5 bg-white border-2 border-purple-200 hover:border-purple-400 rounded-xl transition-all hover:shadow-lg"
+                            className="px-3 py-2.5 bg-white dark:bg-slate-800 border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500 rounded-xl transition-all hover:shadow-lg"
                             title="Picture in Picture"
                         >
-                            <PictureInPicture className="w-5 h-5 text-purple-600" />
+                            <PictureInPicture className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                         </motion.button>
                     </div>
                 </div>

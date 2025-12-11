@@ -1,6 +1,4 @@
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/shared/Navigation';
-import { Footer } from '@/components/shared/Footer';
 import { VideoCard } from '@/features/videos/VideoCard';
 import { getVideosByCategory } from '@/data/videoData';
 import { Video, Music2, Sparkles, TrendingUp } from 'lucide-react';
@@ -45,9 +43,9 @@ export function VideoPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-purple-50/30">
+        <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-purple-950/30 theme-transition">
             {/* Hero Section */}
-            <div className="relative min-h-[60vh] overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/40 to-pink-50/30">
+            <div className="relative min-h-[60vh] overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-950/40 dark:to-pink-950/30">
                 {/* Decorative Orbs */}
                 <motion.div
                     animate={{
@@ -60,7 +58,7 @@ export function VideoPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full blur-3xl"
+                    className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-pink-200/30 dark:from-purple-700/30 dark:to-pink-700/30 rounded-full blur-3xl"
                 />
                 <motion.div
                     animate={{
@@ -73,13 +71,11 @@ export function VideoPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute bottom-20 left-20 w-[450px] h-[450px] bg-gradient-to-br from-blue-200/30 to-indigo-200/30 rounded-full blur-3xl"
+                    className="absolute bottom-20 left-20 w-[450px] h-[450px] bg-gradient-to-br from-blue-200/30 to-indigo-200/30 dark:from-blue-700/30 dark:to-indigo-700/30 rounded-full blur-3xl"
                 />
 
                 {/* Content */}
                 <div className="relative z-10">
-                    <Navigation isLoaded={isLoaded} />
-
                     {/* Hero Content */}
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
                         <motion.div
@@ -93,16 +89,16 @@ export function VideoPage() {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-xl border border-purple-200 rounded-full mb-6"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-purple-200 dark:border-purple-700 rounded-full mb-6"
                             >
-                                <Video className="w-4 h-4 text-purple-600" />
-                                <span className="text-sm font-bold text-purple-600 uppercase tracking-wide">
+                                <Video className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                                <span className="text-sm font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wide">
                                     Music Videos
                                 </span>
                             </motion.div>
 
                             {/* Title */}
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 leading-tight">
+                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
                                 Watch & Feel
                                 <br />
                                 <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
@@ -111,23 +107,23 @@ export function VideoPage() {
                             </h1>
 
                             {/* Description */}
-                            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+                            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
                                 Immerse yourself in the world's best EDM music videos. Watch, download, and enjoy in picture-in-picture mode.
                             </p>
 
                             {/* Stats */}
                             <div className="flex flex-wrap justify-center gap-8 text-center">
-                                <div className="px-6 py-3 bg-white/60 backdrop-blur-xl rounded-2xl border border-slate-200/60">
-                                    <div className="text-3xl font-black text-slate-900">{edmVideos.length + famousVideos.length + unreleasedVideos.length}+</div>
-                                    <div className="text-sm font-semibold text-slate-600">Videos</div>
+                                <div className="px-6 py-3 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-200/60 dark:border-slate-700/60 theme-transition">
+                                    <div className="text-3xl font-black text-slate-900 dark:text-white">{edmVideos.length + famousVideos.length + unreleasedVideos.length}+</div>
+                                    <div className="text-sm font-semibold text-slate-600 dark:text-slate-300">Videos</div>
                                 </div>
-                                <div className="px-6 py-3 bg-white/60 backdrop-blur-xl rounded-2xl border border-slate-200/60">
-                                    <div className="text-3xl font-black text-slate-900">4K</div>
-                                    <div className="text-sm font-semibold text-slate-600">Quality</div>
+                                <div className="px-6 py-3 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-200/60 dark:border-slate-700/60 theme-transition">
+                                    <div className="text-3xl font-black text-slate-900 dark:text-white">4K</div>
+                                    <div className="text-sm font-semibold text-slate-600 dark:text-slate-300">Quality</div>
                                 </div>
-                                <div className="px-6 py-3 bg-white/60 backdrop-blur-xl rounded-2xl border border-slate-200/60">
-                                    <div className="text-3xl font-black text-slate-900">Free</div>
-                                    <div className="text-sm font-semibold text-slate-600">Always</div>
+                                <div className="px-6 py-3 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-slate-200/60 dark:border-slate-700/60 theme-transition">
+                                    <div className="text-3xl font-black text-slate-900 dark:text-white">Free</div>
+                                    <div className="text-sm font-semibold text-slate-600 dark:text-slate-300">Always</div>
                                 </div>
                             </div>
                         </motion.div>
@@ -155,10 +151,10 @@ export function VideoPage() {
                                             <Icon className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
-                                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900">
+                                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
                                                 {section.title}
                                             </h2>
-                                            <p className="text-slate-600 text-sm sm:text-base mt-1">
+                                            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-1">
                                                 {section.description}
                                             </p>
                                         </div>
@@ -176,16 +172,13 @@ export function VideoPage() {
                             {/* Divider between sections */}
                             {sectionIndex < sections.length - 1 && (
                                 <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-20">
-                                    <div className="h-px bg-gradient-to-r from-transparent via-purple-200 to-transparent" />
+                                    <div className="h-px bg-gradient-to-r from-transparent via-purple-200 dark:via-purple-700 to-transparent" />
                                 </div>
                             )}
                         </div>
                     );
                 })}
             </div>
-
-            {/* Footer */}
-            <Footer />
         </div>
     );
 }

@@ -42,7 +42,7 @@ export function VideoSection() {
   ];
 
   return (
-    <div className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-slate-50">
+    <div className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900 theme-transition">
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <motion.div
@@ -53,15 +53,15 @@ export function VideoSection() {
           className="mb-12"
         >
           <div className="flex items-center gap-2 mb-4">
-            <TrendingUp className="w-5 h-5 text-purple-600" />
-            <span className="text-sm font-semibold text-purple-600 uppercase tracking-wide">
+            <TrendingUp className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+            <span className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide">
               Popular Videos
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-4">
             Music Videos
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl">
+          <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl">
             Experience the energy with exclusive live sets and music videos
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ export function VideoSection() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-purple-300 hover:shadow-xl transition-all duration-300">
+              <div className="relative bg-white dark:bg-slate-900/80 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/60 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-xl transition-all duration-300">
                 {/* Video Thumbnail */}
                 <div className="relative aspect-video overflow-hidden bg-slate-900">
                   {/* Gradient Placeholder */}
@@ -108,17 +108,17 @@ export function VideoSection() {
 
                 {/* Video Info */}
                 <div className="p-4 sm:p-5">
-                  <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-purple-700 transition-colors line-clamp-2">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors line-clamp-2">
                     {video.title}
                   </h3>
-                  <p className="text-sm text-slate-600 font-medium mb-4">{video.artist}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 font-medium mb-4">{video.artist}</p>
 
                   {/* Action Button */}
                   <a
                     href={`https://www.youtube.com/@edmloverr_`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-slate-900 hover:bg-purple-600 text-white rounded-xl font-semibold transition-all"
+                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-slate-900 dark:bg-purple-600 hover:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-xl font-semibold transition-all"
                   >
                     <Play className="w-4 h-4" fill="white" />
                     Watch Now
@@ -137,7 +137,7 @@ export function VideoSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 bg-slate-900 hover:bg-purple-600 text-white rounded-xl font-semibold transition-all hover:shadow-lg">
+          <button className="px-8 py-3 bg-slate-900 dark:bg-purple-600 hover:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-xl font-semibold transition-all hover:shadow-lg">
             Load More Videos →
           </button>
         </motion.div>

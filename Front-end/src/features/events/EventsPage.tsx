@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Calendar, Sparkles, Music } from 'lucide-react';
-import { Navigation } from '@/components/shared/Navigation';
 import { EventCard } from '@/components/events/EventCard';
 import { EventFilterBar, FilterCategory } from '@/components/events/EventFilterBar';
 import { ArtistLineupCard } from '@/components/events/ArtistLineupCard';
@@ -31,10 +30,7 @@ export function EventsPage() {
     }, [activeFilter]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 pb-32">
-            {/* Navigation */}
-            <Navigation isLoaded={isLoaded} />
-
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-purple-950/30 pb-32 theme-transition">
             {/* Hero Section */}
             <section className="relative overflow-hidden px-4 sm:px-6 md:px-8 pt-8 pb-16">
                 {/* Animated Background Orbs */}
@@ -49,7 +45,7 @@ export function EventsPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-pink-300/20 rounded-full blur-3xl"
+                    className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-pink-300/20 dark:from-purple-700/20 dark:to-pink-700/20 rounded-full blur-3xl"
                 />
                 <motion.div
                     animate={{
@@ -62,7 +58,7 @@ export function EventsPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-blue-300/20 to-indigo-300/20 rounded-full blur-3xl"
+                    className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-blue-300/20 to-indigo-300/20 dark:from-blue-700/20 dark:to-indigo-700/20 rounded-full blur-3xl"
                 />
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -80,10 +76,14 @@ export function EventsPage() {
                                 <Calendar className="w-10 h-10 text-white" />
                             </div>
                         </motion.div>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
-                            Experience Live Music
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                            <span className="text-slate-900 dark:text-white">Experience</span>
+                            <br />
+                            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                                Live Music
+                            </span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+                        <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                             Discover the best EDM events, festivals, and club nights near you
                         </p>
                     </motion.div>
@@ -115,15 +115,15 @@ export function EventsPage() {
                         transition={{ delay: 0.3 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <Sparkles className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             {activeFilter === 'all' ? 'All Events' :
                                 activeFilter === 'this-weekend' ? 'This Weekend' :
                                     activeFilter === 'upcoming' ? 'Upcoming Events' :
                                         activeFilter === 'festival' ? 'Festivals' :
                                             activeFilter === 'club-night' ? 'Club Nights' : 'Virtual Events'}
                         </h2>
-                        <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent" />
+                        <div className="flex-1 h-px bg-gradient-to-r from-slate-200 dark:from-slate-700 to-transparent" />
                     </motion.div>
 
                     {/* Events Grid */}
@@ -139,11 +139,11 @@ export function EventsPage() {
                             animate={{ opacity: 1 }}
                             className="text-center py-16"
                         >
-                            <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Calendar className="w-10 h-10 text-slate-400" />
+                            <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Calendar className="w-10 h-10 text-slate-400 dark:text-slate-500" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-2">No events found</h3>
-                            <p className="text-slate-600">Try selecting a different filter</p>
+                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No events found</h3>
+                            <p className="text-slate-600 dark:text-slate-400">Try selecting a different filter</p>
                         </motion.div>
                     )}
                 </div>
@@ -158,11 +158,11 @@ export function EventsPage() {
                         transition={{ delay: 0.4 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <Music className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <Music className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             Featured Artists
                         </h2>
-                        <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent" />
+                        <div className="flex-1 h-px bg-gradient-to-r from-slate-200 dark:from-slate-700 to-transparent" />
                     </motion.div>
 
                     {/* Horizontal Scrollable Artist List */}
@@ -178,7 +178,7 @@ export function EventsPage() {
                         </div>
 
                         {/* Scroll Indicator */}
-                        <div className="absolute right-0 top-0 bottom-4 w-20 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-4 w-20 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent pointer-events-none" />
                     </div>
                 </div>
             </section>

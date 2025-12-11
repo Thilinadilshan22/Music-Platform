@@ -24,7 +24,7 @@ export function PlaylistCard({ playlist, index }: PlaylistCardProps) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: (index || 0) * 0.05 }}
             whileHover={{ y: -8, scale: 1.02 }}
-            className="group relative bg-white/60 backdrop-blur-xl rounded-2xl p-5 border border-white/60 shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+            className="group relative bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-5 border border-white/60 dark:border-slate-700/60 shadow-lg hover:shadow-2xl transition-all cursor-pointer theme-transition"
             onClick={handlePlayPlaylist}
         >
             {/* Cover Image */}
@@ -60,13 +60,13 @@ export function PlaylistCard({ playlist, index }: PlaylistCardProps) {
 
             {/* Playlist Info */}
             <div>
-                <h3 className="font-bold text-lg text-slate-900 mb-1 truncate group-hover:text-purple-600 transition-colors">
+                <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-1 truncate group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {playlist.name}
                 </h3>
-                <p className="text-sm text-slate-600 line-clamp-2 mb-2">
+                <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-2">
                     {playlist.description}
                 </p>
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>{playlist.tracks.length} tracks</span>
                     <span className="truncate ml-2">by {playlist.createdBy}</span>
                 </div>

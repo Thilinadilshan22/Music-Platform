@@ -26,7 +26,7 @@ export function TrackCard({ track, index }: TrackCardProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: (index || 0) * 0.05 }}
             whileHover={{ y: -4 }}
-            className="group relative bg-white/60 backdrop-blur-xl rounded-2xl p-4 border border-white/60 shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+            className="group relative bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-4 border border-white/60 dark:border-slate-700/60 shadow-lg hover:shadow-2xl transition-all cursor-pointer theme-transition"
         >
             {/* Album Art */}
             <div className="relative overflow-hidden rounded-xl mb-4">
@@ -78,11 +78,11 @@ export function TrackCard({ track, index }: TrackCardProps) {
 
             {/* Track Info */}
             <div className="space-y-1">
-                <h3 className="font-bold text-slate-900 truncate group-hover:text-purple-600 transition-colors">
+                <h3 className="font-bold text-slate-900 dark:text-white truncate group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {track.title}
                 </h3>
-                <p className="text-sm text-slate-600 truncate">{track.artist}</p>
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <p className="text-sm text-slate-600 dark:text-slate-400 truncate">{track.artist}</p>
+                <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>{formatDuration(track.duration)}</span>
                     <span>{formatPlayCount(track.plays)} plays</span>
                 </div>
@@ -95,7 +95,7 @@ export function TrackCard({ track, index }: TrackCardProps) {
                         e.stopPropagation();
                         addToQueue(track);
                     }}
-                    className="flex-1 px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg font-semibold text-xs text-slate-700 transition-colors flex items-center justify-center gap-1"
+                    className="flex-1 px-3 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg font-semibold text-xs text-slate-700 dark:text-slate-200 transition-colors flex items-center justify-center gap-1"
                 >
                     <Plus className="w-3 h-3" />
                     Queue

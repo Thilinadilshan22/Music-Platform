@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Music, TrendingUp, Headphones, Sparkles } from 'lucide-react';
-import { Navigation } from '@/components/shared/Navigation';
 import { TrackCard } from '@/components/music/TrackCard';
 import { PlaylistCard } from '@/components/music/PlaylistCard';
 import {
@@ -20,10 +19,7 @@ export function MusicPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 pb-32">
-            {/* Navigation */}
-            <Navigation isLoaded={isLoaded} />
-
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/30 pb-32 theme-transition">
             {/* Hero Section */}
             <section className="relative overflow-hidden px-4 sm:px-6 md:px-8 pt-8 pb-16">
                 {/* Animated Background Orbs */}
@@ -38,7 +34,7 @@ export function MusicPage() {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-pink-300/20 rounded-full blur-3xl"
+                    className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-pink-300/20 dark:from-purple-700/20 dark:to-pink-700/20 rounded-full blur-3xl"
                 />
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -56,10 +52,14 @@ export function MusicPage() {
                                 <Headphones className="w-10 h-10 text-white" />
                             </div>
                         </motion.div>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent mb-4">
-                            Discover Your Sound
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                            <span className="text-slate-900 dark:text-white">Discover Your</span>
+                            <br />
+                            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                                Sound
+                            </span>
                         </h1>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+                        <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                             Millions of tracks, endless possibilities. Stream the music you love.
                         </p>
                     </motion.div>
@@ -75,8 +75,8 @@ export function MusicPage() {
                         transition={{ delay: 0.2 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <Sparkles className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             Featured Tracks
                         </h2>
                     </motion.div>
@@ -97,8 +97,8 @@ export function MusicPage() {
                         transition={{ delay: 0.3 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <Music className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <Music className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             Browse by Genre
                         </h2>
                     </motion.div>
@@ -119,8 +119,8 @@ export function MusicPage() {
                         transition={{ delay: 0.4 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <TrendingUp className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <TrendingUp className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             Trending Now
                         </h2>
                     </motion.div>
@@ -141,8 +141,8 @@ export function MusicPage() {
                         transition={{ delay: 0.5 }}
                         className="flex items-center gap-3 mb-6"
                     >
-                        <Music className="w-6 h-6 text-purple-600" />
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+                        <Music className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                             Featured Playlists
                         </h2>
                     </motion.div>

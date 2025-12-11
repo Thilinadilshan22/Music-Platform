@@ -18,7 +18,7 @@ export function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 flex relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/30 flex relative overflow-hidden theme-transition">
             {/* Animated Background Orbs */}
             <motion.div
                 animate={{
@@ -31,7 +31,7 @@ export function LoginPage() {
                     repeat: Infinity,
                     ease: "easeInOut"
                 }}
-                className="absolute top-20 right-20 w-64 h-64 lg:w-96 lg:h-96 bg-gradient-to-br from-purple-300/30 to-pink-300/30 rounded-full blur-3xl"
+                className="absolute top-20 right-20 w-64 h-64 lg:w-96 lg:h-96 bg-gradient-to-br from-purple-300/30 to-pink-300/30 dark:from-purple-700/30 dark:to-pink-700/30 rounded-full blur-3xl"
             />
             <motion.div
                 animate={{
@@ -44,7 +44,7 @@ export function LoginPage() {
                     repeat: Infinity,
                     ease: "easeInOut"
                 }}
-                className="absolute bottom-20 left-20 w-72 h-72 lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-blue-300/30 to-indigo-300/30 rounded-full blur-3xl"
+                className="absolute bottom-20 left-20 w-72 h-72 lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-blue-300/30 to-indigo-300/30 dark:from-blue-700/30 dark:to-indigo-700/30 rounded-full blur-3xl"
             />
 
             {/* Brand Showcase Panel - Desktop Only */}
@@ -61,14 +61,14 @@ export function LoginPage() {
                             <div className="w-16 h-16 xl:w-20 xl:h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-2xl">
                                 <Music className="w-8 h-8 xl:w-10 xl:h-10 text-white" />
                             </div>
-                            <h1 className="text-4xl xl:text-5xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent">
+                            <h1 className="text-4xl xl:text-5xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-300 dark:to-white bg-clip-text text-transparent">
                                 edmloverr_
                             </h1>
                         </div>
-                        <p className="text-xl xl:text-2xl font-bold text-slate-800 mb-4">
+                        <p className="text-xl xl:text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
                             Your Ultimate Music Streaming Experience
                         </p>
-                        <p className="text-slate-600 text-lg">
+                        <p className="text-slate-600 dark:text-slate-300 text-lg">
                             Discover millions of tracks, create playlists, and enjoy seamless streaming with stunning visuals.
                         </p>
                     </motion.div>
@@ -111,9 +111,9 @@ export function LoginPage() {
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                        className="absolute top-20 right-10 w-20 h-20 bg-white/40 backdrop-blur-xl rounded-2xl shadow-lg flex items-center justify-center"
+                        className="absolute top-20 right-10 w-20 h-20 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-2xl shadow-lg flex items-center justify-center"
                     >
-                        <Music className="w-10 h-10 text-purple-600" />
+                        <Music className="w-10 h-10 text-purple-600 dark:text-purple-400" />
                     </motion.div>
                     <motion.div
                         animate={{
@@ -125,7 +125,7 @@ export function LoginPage() {
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                        className="absolute bottom-32 left-10 w-16 h-16 bg-white/30 backdrop-blur-xl rounded-full shadow-lg"
+                        className="absolute bottom-32 left-10 w-16 h-16 bg-white/30 dark:bg-slate-800/30 backdrop-blur-xl rounded-full shadow-lg"
                     />
                 </div>
             </div>
@@ -139,11 +139,11 @@ export function LoginPage() {
                     className="w-full max-w-lg lg:max-w-xl xl:max-w-2xl"
                 >
                     {/* Glass Card */}
-                    <div className="bg-white/80 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/60 p-6 sm:p-8 lg:p-10 xl:p-12">
+                    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/60 dark:border-slate-700/60 p-6 sm:p-8 lg:p-10 xl:p-12 theme-transition">
                         {/* Back Button */}
                         <Link
                             to="/"
-                            className="inline-flex items-center gap-2 text-slate-600 hover:text-purple-600 font-semibold mb-6 lg:mb-8 transition-colors group"
+                            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold mb-6 lg:mb-8 transition-colors group"
                         >
                             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                             Back to Home
@@ -159,31 +159,31 @@ export function LoginPage() {
                             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg mb-4">
                                 <Music className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                             </div>
-                            <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 bg-clip-text text-transparent">
+                            <h1 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-300 dark:to-white bg-clip-text text-transparent">
                                 edmloverr_
                             </h1>
-                            <p className="text-slate-600 text-sm sm:text-base mt-2">
+                            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-2">
                                 {isLogin ? 'Welcome back!' : 'Join the community'}
                             </p>
                         </motion.div>
 
                         {/* Desktop Greeting */}
                         <div className="hidden lg:block mb-8">
-                            <h2 className="text-3xl xl:text-4xl font-black text-slate-900 mb-2">
+                            <h2 className="text-3xl xl:text-4xl font-black text-slate-900 dark:text-white mb-2">
                                 {isLogin ? 'Welcome Back!' : 'Get Started'}
                             </h2>
-                            <p className="text-slate-600 text-lg">
+                            <p className="text-slate-600 dark:text-slate-300 text-lg">
                                 {isLogin ? 'Sign in to continue your journey' : 'Create your account to get started'}
                             </p>
                         </div>
 
                         {/* Toggle Login/Signup */}
-                        <div className="flex gap-2 mb-6 lg:mb-8 bg-slate-100 rounded-xl p-1">
+                        <div className="flex gap-2 mb-6 lg:mb-8 bg-slate-100 dark:bg-slate-800 rounded-xl p-1">
                             <button
                                 onClick={() => setIsLogin(true)}
                                 className={`flex-1 px-4 py-3 rounded-lg font-semibold transition-all text-base lg:text-lg ${isLogin
                                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
-                                    : 'text-slate-600 hover:text-slate-900'
+                                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                                     }`}
                             >
                                 Login
@@ -192,7 +192,7 @@ export function LoginPage() {
                                 onClick={() => setIsLogin(false)}
                                 className={`flex-1 px-4 py-3 rounded-lg font-semibold transition-all text-base lg:text-lg ${!isLogin
                                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
-                                    : 'text-slate-600 hover:text-slate-900'
+                                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                                     }`}
                             >
                                 Sign Up
@@ -228,7 +228,7 @@ export function LoginPage() {
                                                     value={name}
                                                     onChange={(e) => setName(e.target.value)}
                                                     placeholder="John Doe"
-                                                    className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 placeholder:text-slate-400 text-base lg:text-lg"
+                                                    className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base lg:text-lg"
                                                     required={!isLogin}
                                                 />
                                             </div>
@@ -247,7 +247,7 @@ export function LoginPage() {
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
                                                 placeholder="your@email.com"
-                                                className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 placeholder:text-slate-400 text-base lg:text-lg"
+                                                className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base lg:text-lg"
                                                 required
                                             />
                                         </div>
@@ -271,7 +271,7 @@ export function LoginPage() {
                                                     value={location}
                                                     onChange={(e) => setLocation(e.target.value)}
                                                     placeholder="City, Country"
-                                                    className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 placeholder:text-slate-400 text-base lg:text-lg"
+                                                    className="w-full pl-12 pr-4 py-3.5 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base lg:text-lg"
                                                     required={!isLogin}
                                                 />
                                             </div>
@@ -290,7 +290,7 @@ export function LoginPage() {
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
                                                 placeholder="••••••••"
-                                                className="w-full pl-12 pr-12 py-3.5 lg:py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 placeholder:text-slate-400 text-base lg:text-lg"
+                                                className="w-full pl-12 pr-12 py-3.5 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-purple-500 dark:focus:border-purple-400 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-base lg:text-lg"
                                                 required
                                             />
                                             <button
@@ -335,10 +335,10 @@ export function LoginPage() {
                         {/* Divider */}
                         <div className="relative my-6 lg:my-8">
                             <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-slate-200"></div>
+                                <div className="w-full border-t border-slate-200 dark:border-slate-700"></div>
                             </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-4 bg-white/80 text-slate-500 font-medium">
+                                <span className="px-4 bg-white/80 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400 font-medium">
                                     Or continue with
                                 </span>
                             </div>
@@ -346,7 +346,7 @@ export function LoginPage() {
 
                         {/* Social Login */}
                         <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                            <button className="px-4 py-3 lg:py-4 bg-white border-2 border-slate-200 rounded-xl hover:border-purple-300 hover:bg-slate-50 transition-all font-semibold text-slate-700 flex items-center justify-center gap-2">
+                            <button className="px-4 py-3 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl hover:border-purple-300 dark:hover:border-purple-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all font-semibold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2">
                                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
@@ -355,7 +355,7 @@ export function LoginPage() {
                                 </svg>
                                 <span className="hidden sm:inline">Google</span>
                             </button>
-                            <button className="px-4 py-3 lg:py-4 bg-white border-2 border-slate-200 rounded-xl hover:border-purple-300 hover:bg-slate-50 transition-all font-semibold text-slate-700 flex items-center justify-center gap-2">
+                            <button className="px-4 py-3 lg:py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl hover:border-purple-300 dark:hover:border-purple-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all font-semibold text-slate-700 dark:text-slate-200 flex items-center justify-center gap-2">
                                 <svg className="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24">
                                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                 </svg>
@@ -395,14 +395,14 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay }}
-            className="flex items-start gap-4 p-4 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/80 shadow-lg hover:shadow-xl transition-shadow"
+            className="flex items-start gap-4 p-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-white/80 dark:border-slate-700/80 shadow-lg hover:shadow-xl transition-shadow"
         >
             <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
                 {icon}
             </div>
             <div>
-                <h3 className="font-bold text-slate-900 mb-1">{title}</h3>
-                <p className="text-sm text-slate-600">{description}</p>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">{title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{description}</p>
             </div>
         </motion.div>
     );
