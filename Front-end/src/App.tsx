@@ -4,6 +4,7 @@ import { LoginPage } from '@/features/auth/LoginPage';
 import { MusicPage } from '@/features/music/MusicPage';
 import { VideoPage } from '@/features/videos/VideoPage';
 import { EventsPage } from '@/features/events/EventsPage';
+import { ArtistsPage } from '@/features/artists/ArtistsPage';
 import { MusicProvider } from '@/contexts/MusicContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
 
@@ -17,6 +18,7 @@ export default function App() {
                     <Route path="/music" element={<MusicPage />} />
                     <Route path="/videos" element={<VideoPage />} />
                     <Route path="/events" element={<EventsPage />} />
+                    <Route path="/artists" element={<ArtistsPage />} />
                 </Routes>
                 <MusicPlayer />
             </BrowserRouter>
