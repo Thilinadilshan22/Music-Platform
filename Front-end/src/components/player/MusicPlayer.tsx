@@ -10,7 +10,8 @@ import {
     Repeat,
     Repeat1,
     ListMusic,
-    Heart
+    Heart,
+    X
 } from 'lucide-react';
 import { useMusic } from '@/contexts/MusicContext';
 import { formatDuration } from '@/data/mockMusicData';
@@ -33,7 +34,8 @@ export function MusicPlayer() {
         setVolume,
         toggleMute,
         toggleShuffle,
-        toggleRepeat
+        toggleRepeat,
+        closePlayer
     } = useMusic();
 
     const [showVolumeSlider, setShowVolumeSlider] = useState(false);
@@ -104,6 +106,17 @@ export function MusicPlayer() {
                         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                     </motion.div>
                 </div>
+
+                {/* Close Button */}
+                <motion.button
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={closePlayer}
+                    className="absolute top-2 right-2 p-1.5 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 rounded-full transition-colors z-10 group"
+                    title="Close player"
+                >
+                    <X className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
+                </motion.button>
 
                 <div className="px-4 py-3 flex items-center justify-between gap-4">
                     {/* Track Info */}

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { CTAButton } from '@/components/shared/CTAButton';
 import { Music, Heart, Share2, Users, Headphones, Radio, TrendingUp } from 'lucide-react';
 
@@ -7,6 +8,8 @@ interface HeroContentProps {
 }
 
 export function HeroContent({ isLoaded }: HeroContentProps) {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Music,
@@ -89,8 +92,8 @@ export function HeroContent({ isLoaded }: HeroContentProps) {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <CTAButton variant="primary">Start Listening</CTAButton>
-          <CTAButton variant="secondary">Browse Artists</CTAButton>
+          <CTAButton variant="primary" onClick={() => navigate('/music')}>Start Listening</CTAButton>
+          <CTAButton variant="secondary" onClick={() => navigate('/artists')}>Browse Artists</CTAButton>
         </motion.div>
 
         {/* Stats */}

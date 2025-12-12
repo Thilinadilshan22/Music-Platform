@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { NavLink } from '@/components/shared/NavLink';
-import { Search, Menu, Sun, Moon } from 'lucide-react';
+import { SearchBar } from '@/components/shared/SearchBar';
+import { Menu, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -74,11 +75,8 @@ export function Navigation({ isLoaded }: NavigationProps) {
                 )}
               </motion.button>
 
-              {/* Search Button */}
-              <button className="hidden md:flex items-center gap-2 px-4 py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-all font-semibold text-slate-700 dark:text-slate-300">
-                <Search className="w-4 h-4" />
-                <span className="hidden xl:inline">Search</span>
-              </button>
+              {/* Search Bar */}
+              <SearchBar />
 
               {/* Get Started Button */}
               <Link

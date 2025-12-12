@@ -23,6 +23,7 @@ interface MusicContextType {
     toggleMute: () => void;
     toggleShuffle: () => void;
     toggleRepeat: () => void;
+    closePlayer: () => void;
     addToQueue: (track: Track) => void;
     removeFromQueue: (trackId: string) => void;
     clearQueue: () => void;
@@ -151,6 +152,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         setQueueState(tracks);
     }, []);
 
+    const closePlayer = useCallback(() => {
+        setCurrentTrack(null);
+        setIsPlaying(false);
+        setCurrentTime(0);
+    }, []);
+
     const value: MusicContextType = {
         currentTrack,
         isPlaying,
@@ -170,6 +177,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         toggleMute,
         toggleShuffle,
         toggleRepeat,
+        closePlayer,
         addToQueue,
         removeFromQueue,
         clearQueue,
