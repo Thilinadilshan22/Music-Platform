@@ -26,7 +26,7 @@ export interface Genre {
     id: string;
     name: string;
     color: string;
-    icon: string;
+    iconName: string;
 }
 
 // Featured tracks
@@ -37,7 +37,7 @@ export const featuredTracks: Track[] = [
         artist: 'DJ Stellar',
         album: 'Night Vibes',
         duration: 245,
-        coverUrl: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400&h=400&fit=crop',
         genre: 'EDM',
         releaseYear: 2024,
         plays: 1250000
@@ -48,7 +48,7 @@ export const featuredTracks: Track[] = [
         artist: 'Neon Beats',
         album: 'Synthwave Sessions',
         duration: 198,
-        coverUrl: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=400&h=400&fit=crop',
         genre: 'Synthwave',
         releaseYear: 2024,
         plays: 980000
@@ -59,7 +59,7 @@ export const featuredTracks: Track[] = [
         artist: 'Liquid Motion',
         album: 'Fluid Dynamics',
         duration: 312,
-        coverUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1571609842705-e8a13e62ff4b?w=400&h=400&fit=crop',
         genre: 'Chillout',
         releaseYear: 2023,
         plays: 2100000
@@ -70,7 +70,7 @@ export const featuredTracks: Track[] = [
         artist: 'Cyber Dreams',
         album: 'Digital Horizon',
         duration: 267,
-        coverUrl: 'https://images.unsplash.com/photo-1619983081563-430f63602796?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1619983081593-e2ba5b543168?w=400&h=400&fit=crop',
         genre: 'Techno',
         releaseYear: 2024,
         plays: 750000
@@ -81,7 +81,7 @@ export const featuredTracks: Track[] = [
         artist: 'Tropical Beats',
         album: 'Summer Anthems',
         duration: 223,
-        coverUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=400&fit=crop',
         genre: 'House',
         releaseYear: 2024,
         plays: 1800000
@@ -92,7 +92,7 @@ export const featuredTracks: Track[] = [
         artist: 'SubWave',
         album: 'Low Frequency',
         duration: 201,
-        coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
         genre: 'Dubstep',
         releaseYear: 2023,
         plays: 1450000
@@ -107,7 +107,7 @@ export const trendingTracks: Track[] = [
         artist: 'Party Starter',
         album: 'Club Hits 2024',
         duration: 189,
-        coverUrl: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400&h=400&fit=crop',
         genre: 'EDM',
         releaseYear: 2024,
         plays: 3200000
@@ -118,7 +118,7 @@ export const trendingTracks: Track[] = [
         artist: 'Space Odyssey',
         album: 'Interstellar',
         duration: 298,
-        coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
         genre: 'Trance',
         releaseYear: 2024,
         plays: 2850000
@@ -129,7 +129,7 @@ export const trendingTracks: Track[] = [
         artist: 'City Lights',
         album: 'Metropolitan',
         duration: 234,
-        coverUrl: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
         genre: 'Deep House',
         releaseYear: 2024,
         plays: 1920000
@@ -140,23 +140,67 @@ export const trendingTracks: Track[] = [
         artist: 'Synthmaster',
         album: '80s Revival',
         duration: 256,
-        coverUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop',
+        coverUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop',
         genre: 'Synthwave',
         releaseYear: 2024,
         plays: 2340000
+    },
+    {
+        id: '11',
+        title: 'Aurora Dreams',
+        artist: 'Northern Lights',
+        album: 'Arctic Pulse',
+        duration: 278,
+        coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
+        genre: 'Progressive House',
+        releaseYear: 2024,
+        plays: 1680000
+    },
+    {
+        id: '12',
+        title: 'Neon Paradise',
+        artist: 'Digital Nomad',
+        album: 'Virtual Reality',
+        duration: 219,
+        coverUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop',
+        genre: 'Future Bass',
+        releaseYear: 2024,
+        plays: 2150000
+    },
+    {
+        id: '13',
+        title: 'Midnight City',
+        artist: 'Urban Echo',
+        album: 'Downtown Dreams',
+        duration: 241,
+        coverUrl: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop',
+        genre: 'Melodic Techno',
+        releaseYear: 2024,
+        plays: 1920000
+    },
+    {
+        id: '14',
+        title: 'Thunder Strike',
+        artist: 'Storm Chasers',
+        album: 'Electrified',
+        duration: 203,
+        coverUrl: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        genre: 'Electro House',
+        releaseYear: 2024,
+        plays: 2570000
     }
 ];
 
 // Genres
 export const genres: Genre[] = [
-    { id: 'edm', name: 'EDM', color: 'from-purple-500 to-pink-500', icon: '🎧' },
-    { id: 'house', name: 'House', color: 'from-blue-500 to-cyan-500', icon: '🏠' },
-    { id: 'techno', name: 'Techno', color: 'from-red-500 to-orange-500', icon: '⚡' },
-    { id: 'trance', name: 'Trance', color: 'from-indigo-500 to-purple-500', icon: '🌀' },
-    { id: 'dubstep', name: 'Dubstep', color: 'from-green-500 to-teal-500', icon: '🔊' },
-    { id: 'synthwave', name: 'Synthwave', color: 'from-pink-500 to-purple-500', icon: '🌆' },
-    { id: 'chillout', name: 'Chillout', color: 'from-cyan-500 to-blue-500', icon: '🌊' },
-    { id: 'deep-house', name: 'Deep House', color: 'from-yellow-500 to-orange-500', icon: '🎵' }
+    { id: 'edm', name: 'EDM', color: 'from-purple-500 to-pink-500', iconName: 'Headphones' },
+    { id: 'house', name: 'House', color: 'from-blue-500 to-cyan-500', iconName: 'Home' },
+    { id: 'techno', name: 'Techno', color: 'from-red-500 to-orange-500', iconName: 'Zap' },
+    { id: 'trance', name: 'Trance', color: 'from-indigo-500 to-purple-500', iconName: 'Waves' },
+    { id: 'dubstep', name: 'Dubstep', color: 'from-green-500 to-teal-500', iconName: 'Volume2' },
+    { id: 'synthwave', name: 'Synthwave', color: 'from-pink-500 to-purple-500', iconName: 'Sunset' },
+    { id: 'chillout', name: 'Chillout', color: 'from-cyan-500 to-blue-500', iconName: 'Waves' },
+    { id: 'deep-house', name: 'Deep House', color: 'from-yellow-500 to-orange-500', iconName: 'Music' }
 ];
 
 // Featured playlists

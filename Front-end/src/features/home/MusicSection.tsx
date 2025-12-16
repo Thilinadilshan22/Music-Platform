@@ -3,7 +3,7 @@ import { Play, Sparkles } from 'lucide-react';
 import { trendingTracks, formatPlayCount } from '@/data/mockMusicData';
 
 export function MusicSection() {
-  const tracks = trendingTracks.slice(0, 6);
+  const tracks = trendingTracks.slice(0, 10);
 
   return (
     <div className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-white dark:bg-slate-950 theme-transition">

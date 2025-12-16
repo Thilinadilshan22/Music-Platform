@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { Music, TrendingUp, Headphones, Sparkles } from 'lucide-react';
+import { Music, TrendingUp, Headphones, Sparkles, Home, Zap, Waves, Volume2, Sunset } from 'lucide-react';
 import { TrackCard } from '@/components/music/TrackCard';
 import { PlaylistCard } from '@/components/music/PlaylistCard';
 import {
@@ -10,6 +10,18 @@ import {
     genres,
     Genre
 } from '@/data/mockMusicData';
+
+// Icon mapping for dynamic rendering
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+    Headphones,
+    Home,
+    Zap,
+    Waves,
+    Volume2,
+    Sunset,
+    Music,
+    Sparkles
+};
 
 export function MusicPage() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -164,6 +176,8 @@ interface GenreCardProps {
 }
 
 function GenreCard({ genre, index }: GenreCardProps) {
+    const IconComponent = iconMap[genre.iconName] || Music;
+
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -173,7 +187,7 @@ function GenreCard({ genre, index }: GenreCardProps) {
             className={`relative overflow-hidden rounded-2xl p-6 cursor-pointer bg-gradient-to-br ${genre.color} shadow-lg hover:shadow-2xl transition-all h-32`}
         >
             <div className="relative z-10">
-                <div className="text-4xl mb-2">{genre.icon}</div>
+                <IconComponent className="w-8 h-8 text-white mb-2" />
                 <h3 className="text-xl font-black text-white drop-shadow-lg">
                     {genre.name}
                 </h3>

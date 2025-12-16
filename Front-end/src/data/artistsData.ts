@@ -498,18 +498,18 @@ export interface GenreInfo {
     id: ArtistGenre | 'all';
     name: string;
     color: string;
-    icon: string;
+    iconName: string;
 }
 
 export const genres: GenreInfo[] = [
-    { id: 'all', name: 'All Artists', color: 'from-slate-600 to-gray-700', icon: '🎵' },
-    { id: 'edm', name: 'EDM', color: 'from-purple-500 to-pink-500', icon: '🎧' },
-    { id: 'progressive-house', name: 'Progressive House', color: 'from-blue-500 to-cyan-500', icon: '🏠' },
-    { id: 'trance', name: 'Trance', color: 'from-indigo-500 to-purple-500', icon: '🌀' },
-    { id: 'techno', name: 'Techno', color: 'from-red-500 to-orange-500', icon: '⚡' },
-    { id: 'dubstep', name: 'Dubstep', color: 'from-green-500 to-teal-500', icon: '🔊' },
-    { id: 'future-bass', name: 'Future Bass', color: 'from-pink-500 to-purple-500', icon: '🌟' },
-    { id: 'deep-house', name: 'Deep House', color: 'from-cyan-500 to-blue-500', icon: '🌊' }
+    { id: 'all', name: 'All Artists', color: 'from-slate-600 to-gray-700', iconName: 'Music' },
+    { id: 'edm', name: 'EDM', color: 'from-purple-500 to-pink-500', iconName: 'Headphones' },
+    { id: 'progressive-house', name: 'Progressive House', color: 'from-blue-500 to-cyan-500', iconName: 'Home' },
+    { id: 'trance', name: 'Trance', color: 'from-indigo-500 to-purple-500', iconName: 'Waves' },
+    { id: 'techno', name: 'Techno', color: 'from-red-500 to-orange-500', iconName: 'Zap' },
+    { id: 'dubstep', name: 'Dubstep', color: 'from-green-500 to-teal-500', iconName: 'Volume2' },
+    { id: 'future-bass', name: 'Future Bass', color: 'from-pink-500 to-purple-500', iconName: 'Sparkles' },
+    { id: 'deep-house', name: 'Deep House', color: 'from-cyan-500 to-blue-500', iconName: 'Waves' }
 ];
 
 // Helper Functions
