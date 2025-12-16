@@ -1,15 +1,9 @@
 import { motion } from 'motion/react';
 import { Play, Sparkles } from 'lucide-react';
+import { trendingTracks, formatPlayCount } from '@/data/mockMusicData';
 
 export function MusicSection() {
-  const tracks = [
-    { id: 1, title: 'Midnight Dreams', artist: 'DJ Aurora', plays: '2.4M', gradient: 'from-purple-400 to-pink-400' },
-    { id: 2, title: 'Electric Paradise', artist: 'Bass Master', plays: '1.8M', gradient: 'from-blue-400 to-cyan-400' },
-    { id: 3, title: 'Neon Nights', artist: 'Synth Wave', plays: '3.2M', gradient: 'from-pink-400 to-orange-400' },
-    { id: 4, title: 'Digital Dreams', artist: 'Electro Beats', plays: '1.5M', gradient: 'from-emerald-400 to-teal-400' },
-    { id: 5, title: 'Future Bass', artist: 'Wave Rider', plays: '2.1M', gradient: 'from-indigo-400 to-purple-400' },
-    { id: 6, title: 'Sunset Vibes', artist: 'Chill Master', plays: '1.9M', gradient: 'from-orange-400 to-red-400' },
-  ];
+  const tracks = trendingTracks.slice(0, 6);
 
   return (
     <div className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-white dark:bg-slate-950 theme-transition">
@@ -51,7 +45,11 @@ export function MusicSection() {
               <div className="relative bg-white dark:bg-slate-900/80 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/60 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-xl transition-all duration-300">
                 {/* Album Art */}
                 <div className="relative aspect-square overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${track.gradient}`} />
+                  <img
+                    src={track.coverUrl}
+                    alt={track.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
 
                   {/* Play Button Overlay */}
                   <motion.div
@@ -65,7 +63,7 @@ export function MusicSection() {
 
                   {/* Plays Badge */}
                   <div className="absolute top-2 right-2 px-2 py-1 bg-black/50 backdrop-blur-md rounded-lg text-white text-xs font-bold">
-                    {track.plays}
+                    {formatPlayCount(track.plays)}
                   </div>
                 </div>
 
