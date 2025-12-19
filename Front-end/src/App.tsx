@@ -5,6 +5,9 @@ import { MusicPage } from '@/features/music/MusicPage';
 import { VideoPage } from '@/features/videos/VideoPage';
 import { EventsPage } from '@/features/events/EventsPage';
 import { ArtistsPage } from '@/features/artists/ArtistsPage';
+import { PrivacyPolicyPage } from '@/features/legal/PrivacyPolicyPage';
+import { TermsOfServicePage } from '@/features/legal/TermsOfServicePage';
+import { CookiePolicyPage } from '@/features/legal/CookiePolicyPage';
 import { MusicProvider } from '@/contexts/MusicContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
@@ -23,6 +26,9 @@ export default function App() {
                             <Route path="/videos" element={<VideoPage />} />
                             <Route path="/events" element={<EventsPage />} />
                             <Route path="/artists" element={<ArtistsPage />} />
+                            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                            <Route path="/terms" element={<TermsOfServicePage />} />
+                            <Route path="/cookies" element={<CookiePolicyPage />} />
                         </Routes>
                         <MusicPlayer />
                     </MainLayout>

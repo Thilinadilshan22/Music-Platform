@@ -364,15 +364,15 @@ export function LoginPage() {
                         </div>
 
                         {/* Footer Note */}
-                        <p className="text-center text-sm text-slate-500 mt-6 lg:mt-8">
+                        <p className="text-center text-sm text-slate-500 dark:text-slate-400 mt-6 lg:mt-8">
                             By continuing, you agree to our{' '}
-                            <button className="text-purple-600 hover:text-purple-700 font-semibold">
+                            <Link to="/terms" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold transition-colors">
                                 Terms
-                            </button>{' '}
+                            </Link>{' '}
                             and{' '}
-                            <button className="text-purple-600 hover:text-purple-700 font-semibold">
+                            <Link to="/privacy" className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold transition-colors">
                                 Privacy Policy
-                            </button>
+                            </Link>
                         </p>
                     </div>
                 </motion.div>
