@@ -64,7 +64,7 @@ export function Footer() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-3">Navigation</h4>
-                        <nav className="flex flex-col gap-2">
+                        <nav className="flex flex-row flex-wrap gap-4">
                             {navigation.map((link) => (
                                 <Link
                                     key={link.to}
@@ -85,7 +85,7 @@ export function Footer() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-3">Legal</h4>
-                        <nav className="flex flex-col gap-2">
+                        <nav className="flex flex-row flex-wrap gap-4">
                             {legal.map((link) => (
                                 <Link
                                     key={link.to}
