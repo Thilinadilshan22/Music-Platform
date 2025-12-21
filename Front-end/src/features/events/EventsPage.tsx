@@ -68,23 +68,15 @@ export function EventsPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-12"
                     >
-                        <motion.div
-                            className="inline-block mb-4"
-                            whileHover={{ scale: 1.05, rotate: 5 }}
-                        >
-                            <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                                <Calendar className="w-10 h-10 text-white" />
-                            </div>
-                        </motion.div>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-                            <span className="text-slate-900 dark:text-white">Experience</span>
+                            <span className="text-slate-900 dark:text-white">Feel the Beat &</span>
                             <br />
                             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                                Live Music
+                                Live the Events
                             </span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                            Discover the best EDM events, festivals, and club nights near you
+                            Your ultimate destination for discovering, attending, and experiencing Electronic Dance Music events
                         </p>
                     </motion.div>
                 </div>

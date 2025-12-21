@@ -82,23 +82,15 @@ export function ArtistsPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-8"
                     >
-                        <motion.div
-                            className="inline-block mb-4"
-                            whileHover={{ scale: 1.05, rotate: 5 }}
-                        >
-                            <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                                <Music2 className="w-10 h-10 text-white" />
-                            </div>
-                        </motion.div>
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-                            <span className="text-slate-900 dark:text-white">Discover Your</span>
+                            <span className="text-slate-900 dark:text-white">Feel the Beat &</span>
                             <br />
                             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                                Favorite Artists
+                                Live the Artists
                             </span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                            Explore the world's best EDM DJs and producers
+                            Your ultimate destination for discovering, following, and connecting with Electronic Dance Music artists
                         </p>
 
                         {/* Search Bar */}
