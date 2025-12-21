@@ -86,11 +86,11 @@ export function ArtistsPage() {
                             <span className="text-slate-900 dark:text-white">Feel the Beat &</span>
                             <br />
                             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                                Live the Artists
+                                Meet the Artists
                             </span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                            Your ultimate destination for discovering, following, and connecting with Electronic Dance Music artists
+                            Explore the world's top EDM DJs, producers, and rising stars shaping the scene
                         </p>
 
                         {/* Search Bar */}

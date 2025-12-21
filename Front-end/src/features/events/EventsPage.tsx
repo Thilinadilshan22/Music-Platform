@@ -72,11 +72,11 @@ export function EventsPage() {
                             <span className="text-slate-900 dark:text-white">Feel the Beat &</span>
                             <br />
                             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                                Live the Events
+                                Live the Moment
                             </span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                            Your ultimate destination for discovering, attending, and experiencing Electronic Dance Music events
+                            Discover unforgettable EDM events, festivals, and club nights happening near you
                         </p>
                     </motion.div>
                 </div>
