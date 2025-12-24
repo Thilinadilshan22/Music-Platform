@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { Music, TrendingUp, Headphones, Sparkles, Home, Zap, Waves, Volume2, Sunset } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { Music, TrendingUp, Headphones, Sparkles, Home, Zap, Waves, Volume2, Sunset, X } from 'lucide-react';
 import { TrackCard } from '@/components/music/TrackCard';
 import { PlaylistCard } from '@/components/music/PlaylistCard';
 import {
@@ -25,10 +26,25 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function MusicPage() {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const artistFilter = searchParams.get('artist');
 
     useEffect(() => {
         setIsLoaded(true);
     }, []);
+
+    // Filter tracks by artist if artist parameter is present
+    const handleClearFilter = () => {
+        setSearchParams({});
+    };
+
+    const filteredFeaturedTracks = artistFilter
+        ? featuredTracks.filter(track => track.artist.toLowerCase().includes(artistFilter.toLowerCase()))
+        : featuredTracks;
+
+    const filteredTrendingTracks = artistFilter
+        ? trendingTracks.filter(track => track.artist.toLowerCase().includes(artistFilter.toLowerCase()))
+        : trendingTracks;
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/30 pb-32 theme-transition">
@@ -70,6 +86,30 @@ export function MusicPage() {
                 </div>
             </section>
 
+            {/* Artist Filter Badge */}
+            {artistFilter && (
+                <section className="px-4 sm:px-6 md:px-8 mb-8">
+                    <div className="max-w-7xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 border-2 border-purple-300 dark:border-purple-700 rounded-xl"
+                        >
+                            <Music className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                            <span className="text-sm font-bold text-purple-900 dark:text-purple-200">
+                                Showing tracks by: {artistFilter}
+                            </span>
+                            <button
+                                onClick={handleClearFilter}
+                                className="ml-2 p-1 hover:bg-purple-200 dark:hover:bg-purple-800 rounded-full transition-colors"
+                            >
+                                <X className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                            </button>
+                        </motion.div>
+                    </div>
+                </section>
+            )}
+
             {/* Featured Tracks */}
             <section className="px-4 sm:px-6 md:px-8 mb-16">
                 <div className="max-w-7xl mx-auto">
@@ -81,14 +121,21 @@ export function MusicPage() {
                     >
                         <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                            Featured Tracks
+                            {artistFilter ? `Tracks by ${artistFilter}` : 'Featured Tracks'}
                         </h2>
                     </motion.div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-                        {featuredTracks.map((track, index) => (
-                            <TrackCard key={track.id} track={track} index={index} />
-                        ))}
-                    </div>
+                    {filteredFeaturedTracks.length > 0 ? (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                            {filteredFeaturedTracks.map((track, index) => (
+                                <TrackCard key={track.id} track={track} index={index} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-12">
+                            <Music className="w-16 h-16 text-slate-300 dark:text-slate-700 mx-auto mb-4" />
+                            <p className="text-slate-600 dark:text-slate-400">No tracks found for this artist</p>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -106,11 +153,13 @@ export function MusicPage() {
                             Browse by Genre
                         </h2>
                     </motion.div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        {genres.map((genre, index) => (
-                            <GenreCard key={genre.id} genre={genre} index={index} />
-                        ))}
-                    </div>
+                    {!artistFilter && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                            {genres.map((genre, index) => (
+                                <GenreCard key={genre.id} genre={genre} index={index} />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -128,11 +177,13 @@ export function MusicPage() {
                             Trending Now
                         </h2>
                     </motion.div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {trendingTracks.map((track, index) => (
-                            <TrackCard key={track.id} track={track} index={index} />
-                        ))}
-                    </div>
+                    {!artistFilter && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {filteredTrendingTracks.map((track, index) => (
+                                <TrackCard key={track.id} track={track} index={index} />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 

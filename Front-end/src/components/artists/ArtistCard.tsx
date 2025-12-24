@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Play, Music2, Users, CheckCircle } from 'lucide-react';
 import { Artist, formatFollowers } from '@/data/artistsData';
 
@@ -10,10 +11,16 @@ interface ArtistCardProps {
 
 export function ArtistCard({ artist, index }: ArtistCardProps) {
     const [isFollowing, setIsFollowing] = useState(artist.isFollowing || false);
+    const navigate = useNavigate();
 
     const handleFollowClick = (e: React.MouseEvent) => {
         e.stopPropagation();
         setIsFollowing(!isFollowing);
+    };
+
+    const handleTracksClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        navigate(`/music?artist=${encodeURIComponent(artist.name)}`);
     };
 
     const getTrendingBadge = () => {
@@ -79,8 +86,11 @@ export function ArtistCard({ artist, index }: ArtistCardProps) {
                             {formatFollowers(artist.stats.followers)}
                         </div>
                     </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center theme-transition">
-                        <Music2 className="w- h-4 text-pink-600 dark:text-pink-400 mx-auto mb-1" />
+                    <div
+                        onClick={handleTracksClick}
+                        className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center theme-transition cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all hover:scale-105"
+                    >
+                        <Music2 className="w-4 h-4 text-pink-600 dark:text-pink-400 mx-auto mb-1" />
                         <div className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">Tracks</div>
                         <div className="text-sm font-bold text-slate-900 dark:text-white">
                             {artist.stats.totalTracks}
