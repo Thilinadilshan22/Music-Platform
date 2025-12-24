@@ -33,69 +33,135 @@ export interface Genre {
 export const featuredTracks: Track[] = [
     {
         id: '1',
-        title: 'Midnight Dreams',
-        artist: 'DJ Stellar',
-        album: 'Night Vibes',
+        title: 'Animals',
+        artist: 'Martin Garrix',
+        album: 'Gold Skies',
         duration: 245,
         coverUrl: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400&h=400&fit=crop',
-        genre: 'EDM',
-        releaseYear: 2024,
-        plays: 1250000
+        genre: 'Progressive House',
+        releaseYear: 2013,
+        plays: 125000000
     },
     {
         id: '2',
-        title: 'Electric Pulse',
-        artist: 'Neon Beats',
-        album: 'Synthwave Sessions',
+        title: 'In The Name Of Love',
+        artist: 'Martin Garrix',
+        album: 'Seven',
         duration: 198,
         coverUrl: 'https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=400&h=400&fit=crop',
-        genre: 'Synthwave',
-        releaseYear: 2024,
-        plays: 980000
+        genre: 'Progressive House',
+        releaseYear: 2016,
+        plays: 98000000
     },
     {
         id: '3',
-        title: 'Ocean Waves',
-        artist: 'Liquid Motion',
-        album: 'Fluid Dynamics',
+        title: 'A State of Trance',
+        artist: 'Armin van Buuren',
+        album: 'ASOT Radio',
         duration: 312,
         coverUrl: 'https://images.unsplash.com/photo-1571609842705-e8a13e62ff4b?w=400&h=400&fit=crop',
-        genre: 'Chillout',
+        genre: 'Trance',
         releaseYear: 2023,
-        plays: 2100000
+        plays: 21000000
     },
     {
         id: '4',
-        title: 'Neon Lights',
-        artist: 'Cyber Dreams',
-        album: 'Digital Horizon',
+        title: 'Adagio for Strings',
+        artist: 'Tiësto',
+        album: 'In Search of Sunrise',
         duration: 267,
         coverUrl: 'https://images.unsplash.com/photo-1619983081593-e2ba5b543168?w=400&h=400&fit=crop',
-        genre: 'Techno',
-        releaseYear: 2024,
-        plays: 750000
+        genre: 'Trance',
+        releaseYear: 2005,
+        plays: 75000000
     },
     {
         id: '5',
-        title: 'Sunrise Festival',
-        artist: 'Tropical Beats',
-        album: 'Summer Anthems',
+        title: 'Titanium',
+        artist: 'David Guetta',
+        album: 'Nothing but the Beat',
         duration: 223,
         coverUrl: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=400&fit=crop',
-        genre: 'House',
-        releaseYear: 2024,
-        plays: 1800000
+        genre: 'Electro House',
+        releaseYear: 2011,
+        plays: 180000000
     },
     {
         id: '6',
-        title: 'Bass Drop',
-        artist: 'SubWave',
-        album: 'Low Frequency',
+        title: 'Strobe',
+        artist: 'Deadmau5',
+        album: 'For Lack of a Better Name',
         duration: 201,
         coverUrl: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
+        genre: 'Progressive House',
+        releaseYear: 2009,
+        plays: 145000000
+    },
+    {
+        id: '15',
+        title: 'Happier',
+        artist: 'Marshmello',
+        album: 'Joytime II',
+        duration: 214,
+        coverUrl: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=400&h=400&fit=crop',
+        genre: 'Future Bass',
+        releaseYear: 2018,
+        plays: 210000000
+    },
+    {
+        id: '16',
+        title: 'Firestone',
+        artist: 'Kygo',
+        album: 'Cloud Nine',
+        duration: 228,
+        coverUrl: 'https://images.unsplash.com/photo-1571609842705-e8a13e62ff4b?w=400&h=400&fit=crop',
+        genre: 'Tropical House',
+        releaseYear: 2014,
+        plays: 125000000
+    },
+    {
+        id: '17',
+        title: 'Heroes',
+        artist: 'Alesso',
+        album: 'Forever',
+        duration: 235,
+        coverUrl: 'https://images.unsplash.com/photo-1619983081593-e2ba5b543168?w=400&h=400&fit=crop',
+        genre: 'Progressive House',
+        releaseYear: 2014,
+        plays: 98000000
+    },
+    {
+        id: '18',
+        title: 'Faded',
+        artist: 'Alan Walker',
+        album: 'Different World',
+        duration: 212,
+        coverUrl: 'https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=400&h=400&fit=crop',
+        genre: 'EDM',
+        releaseYear: 2015,
+        plays: 320000000
+    },
+    {
+        id: '19',
+        title: 'Scary Monsters and Nice Sprites',
+        artist: 'Skrillex',
+        album: 'Scary Monsters and Nice Sprites',
+        duration: 245,
+        coverUrl: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop',
         genre: 'Dubstep',
-        releaseYear: 2023,
-        plays: 1450000
+        releaseYear: 2010,
+        plays: 168000000
+    },
+    {
+        id: '20',
+        title: 'Levels',
+        artist: 'Avicii',
+        album: 'Levels',
+        duration: 203,
+        coverUrl: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=400&fit=crop',
+        genre: 'Progressive House',
+        releaseYear: 2011,
+        plays: 389000000
     }
 ];
 
@@ -103,91 +169,113 @@ export const featuredTracks: Track[] = [
 export const trendingTracks: Track[] = [
     {
         id: '7',
-        title: 'Weekend Vibes',
-        artist: 'Party Starter',
-        album: 'Club Hits 2024',
+        title: 'Summer Days',
+        artist: 'Martin Garrix',
+        album: 'Seven',
         duration: 189,
         coverUrl: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400&h=400&fit=crop',
-        genre: 'EDM',
-        releaseYear: 2024,
-        plays: 3200000
+        genre: 'Progressive House',
+        releaseYear: 2019,
+        plays: 93200000
     },
     {
         id: '8',
-        title: 'Cosmic Journey',
-        artist: 'Space Odyssey',
-        album: 'Interstellar',
+        title: 'Wake Me Up',
+        artist: 'Avicii',
+        album: 'True',
         duration: 298,
         coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
-        genre: 'Trance',
-        releaseYear: 2024,
-        plays: 2850000
+        genre: 'Progressive House',
+        releaseYear: 2013,
+        plays: 528500000
     },
     {
         id: '9',
-        title: 'Urban Jungle',
-        artist: 'City Lights',
-        album: 'Metropolitan',
+        title: 'Summer',
+        artist: 'Calvin Harris',
+        album: 'Motion',
         duration: 234,
         coverUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
         genre: 'Deep House',
-        releaseYear: 2024,
-        plays: 1920000
+        releaseYear: 2014,
+        plays: 192000000
     },
     {
         id: '10',
-        title: 'Retro Wave',
-        artist: 'Synthmaster',
-        album: '80s Revival',
+        title: 'Clarity',
+        artist: 'Zedd',
+        album: 'Clarity',
         duration: 256,
         coverUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop',
-        genre: 'Synthwave',
-        releaseYear: 2024,
-        plays: 2340000
+        genre: 'Electro House',
+        releaseYear: 2012,
+        plays: 234000000
     },
     {
         id: '11',
-        title: 'Aurora Dreams',
-        artist: 'Northern Lights',
-        album: 'Arctic Pulse',
+        title: 'Alone',
+        artist: 'Marshmello',
+        album: 'Joytime',
         duration: 278,
         coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
-        genre: 'Progressive House',
-        releaseYear: 2024,
-        plays: 1680000
+        genre: 'Future Bass',
+        releaseYear: 2016,
+        plays: 168000000
     },
     {
         id: '12',
-        title: 'Neon Paradise',
-        artist: 'Digital Nomad',
-        album: 'Virtual Reality',
+        title: 'Apollonia',
+        artist: 'Don Diablo',
+        album: 'Hexagon',
         duration: 219,
         coverUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop',
-        genre: 'Future Bass',
-        releaseYear: 2024,
-        plays: 2150000
+        genre: 'Future House',
+        releaseYear: 2019,
+        plays: 21500000
     },
     {
         id: '13',
-        title: 'Midnight City',
-        artist: 'Urban Echo',
-        album: 'Downtown Dreams',
+        title: 'Spaceman',
+        artist: 'Hardwell',
+        album: 'United We Are',
         duration: 241,
         coverUrl: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop',
-        genre: 'Melodic Techno',
-        releaseYear: 2024,
-        plays: 1920000
+        genre: 'Big Room',
+        releaseYear: 2012,
+        plays: 92000000
     },
     {
         id: '14',
-        title: 'Thunder Strike',
-        artist: 'Storm Chasers',
-        album: 'Electrified',
+        title: 'Gecko (Overdrive)',
+        artist: 'Oliver Heldens',
+        album: 'Heldeep',
         duration: 203,
         coverUrl: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop',
+        genre: 'Future House',
+        releaseYear: 2014,
+        plays: 57000000
+    },
+    {
+        id: '21',
+        title: 'The Nights',
+        artist: 'Avicii',
+        album: 'Stories',
+        duration: 178,
+        coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop',
+        genre: 'Progressive House',
+        releaseYear: 2014,
+        plays: 285000000
+    },
+    {
+        id: '22',
+        title: 'Red Lights',
+        artist: 'Tiësto',
+        album: 'A Town Called Paradise',
+        duration: 224,
+        coverUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop',
         genre: 'Electro House',
-        releaseYear: 2024,
-        plays: 2570000
+        releaseYear: 2014,
+        plays: 125000000
     }
 ];
 
