@@ -31,18 +31,20 @@ export function Navigation({ isLoaded }: NavigationProps) {
         <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-2xl sm:rounded-3xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 shadow-xl border border-white/60 dark:border-slate-700/60">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <motion.div
-              className="flex items-center gap-3"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-lg sm:text-xl">E</span>
-              </div>
-              <h1 className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-300 dark:to-white bg-clip-text text-transparent text-lg sm:text-xl md:text-2xl font-black tracking-tight">
-                edmloverr_
-              </h1>
-            </motion.div>
+            <Link to="/" className="no-underline">
+              <motion.div
+                className="flex items-center gap-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-black text-lg sm:text-xl">E</span>
+                </div>
+                <h1 className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-300 dark:to-white bg-clip-text text-transparent text-lg sm:text-xl md:text-2xl font-black tracking-tight">
+                  edmloverr_
+                </h1>
+              </motion.div>
+            </Link>
 
             {/* Navigation Links */}
             <div className="hidden lg:flex items-center gap-2">
