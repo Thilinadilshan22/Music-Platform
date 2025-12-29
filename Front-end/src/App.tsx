@@ -12,12 +12,14 @@ import { MusicProvider } from '@/contexts/MusicContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { MusicPlayer } from '@/components/player/MusicPlayer';
 import { MainLayout } from '@/components/shared/MainLayout';
+import { ScrollToTop } from '@/components/shared/ScrollToTop';
 
 export default function App() {
     return (
         <ThemeProvider>
             <MusicProvider>
                 <BrowserRouter>
+                    <ScrollToTop />
                     <MainLayout>
                         <Routes>
                             <Route path="/" element={<HomePage />} />
