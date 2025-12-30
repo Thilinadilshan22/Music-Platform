@@ -17,14 +17,14 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950">
+    <div className="min-h-screen">
       {/* Hero Section with Clean Design */}
-      <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-purple-950/30">
+      <div className="relative min-h-screen overflow-hidden">
 
-        {/* Subtle Background Gradient */}
+        {/* Subtle Background Gradient - Extends to top */}
         <motion.div
           style={{ y: backgroundY }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full -z-10"
         >
           <motion.div
             initial={{ opacity: 0 }}
