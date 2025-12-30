@@ -24,7 +24,7 @@ export function Navigation({ isLoaded }: NavigationProps) {
       initial={{ opacity: 0, y: -20 }}
       animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full px-4 sm:px-6 md:px-8 py-4 sm:py-6 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-purple-950/30 theme-transition"
+      className="sticky top-0 z-50 w-full px-4 sm:px-6 md:px-8 py-4 sm:py-6 theme-transition"
     >
       <div className="max-w-7xl mx-auto">
         {/* Glass Card Container */}
