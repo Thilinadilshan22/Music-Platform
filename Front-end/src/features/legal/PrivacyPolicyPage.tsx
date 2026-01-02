@@ -1,10 +1,25 @@
 import { motion } from 'motion/react';
-import { Shield } from 'lucide-react';
+import { Shield, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function PrivacyPolicyPage() {
+    const navigate = useNavigate();
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-purple-950/30 theme-transition">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-12">
+                {/* Back Button */}
+                <motion.button
+                    onClick={() => navigate(-1)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold mb-6 transition-colors group"
+                >
+                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                    Back
+                </motion.button>
+
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
