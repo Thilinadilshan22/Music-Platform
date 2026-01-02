@@ -20,7 +20,7 @@ export function MainLayout({ children }: MainLayoutProps) {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <Navigation isLoaded={isLoaded} />
+            {!isAuthPage && <Navigation isLoaded={isLoaded} />}
             <main className="flex-1">
                 {children}
             </main>
