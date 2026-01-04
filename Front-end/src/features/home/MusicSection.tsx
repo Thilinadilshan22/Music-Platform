@@ -1,9 +1,22 @@
 import { motion } from 'motion/react';
-import { Play, Sparkles } from 'lucide-react';
-import { trendingTracks, formatPlayCount } from '@/data/mockMusicData';
+import { Play, Pause, Sparkles } from 'lucide-react';
+import { trendingTracks, formatPlayCount, Track } from '@/data/mockMusicData';
+import { useMusic } from '@/contexts/MusicContext';
 
 export function MusicSection() {
   const tracks = trendingTracks.slice(0, 10);
+  const { playTrack, setQueue, currentTrack, isPlaying, togglePlay } = useMusic();
+
+  const handlePlayTrack = (track: Track) => {
+    // If clicking the same track that's currently playing, toggle play/pause
+    if (currentTrack?.id === track.id) {
+      togglePlay();
+    } else {
+      // Otherwise, set the queue and play the new track
+      setQueue(tracks);
+      playTrack(track);
+    }
+  };
 
   return (
     <div className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-white dark:bg-slate-950 theme-transition">
@@ -42,7 +55,10 @@ export function MusicSection() {
               className="group"
             >
               {/* Card Container */}
-              <div className="relative bg-white dark:bg-slate-900/80 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/60 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-xl transition-all duration-300">
+              <div className={`relative bg-white dark:bg-slate-900/80 rounded-2xl overflow-hidden border transition-all duration-300 ${currentTrack?.id === track.id
+                ? 'border-purple-500 dark:border-purple-500 shadow-xl shadow-purple-500/20'
+                : 'border-slate-200 dark:border-slate-700/60 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-xl'
+                }`}>
                 {/* Album Art */}
                 <div className="relative aspect-square overflow-hidden">
                   <img
@@ -53,12 +69,22 @@ export function MusicSection() {
 
                   {/* Play Button Overlay */}
                   <motion.div
-                    className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    className={`absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center transition-opacity ${currentTrack?.id === track.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                      }`}
                     initial={false}
                   >
-                    <button className="w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
-                      <Play className="w-6 h-6 text-slate-900 ml-0.5" fill="currentColor" />
-                    </button>
+                    <motion.button
+                      onClick={() => handlePlayTrack(track)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center transition-transform"
+                    >
+                      {currentTrack?.id === track.id && isPlaying ? (
+                        <Pause className="w-6 h-6 text-slate-900" fill="currentColor" />
+                      ) : (
+                        <Play className="w-6 h-6 text-slate-900 ml-0.5" fill="currentColor" />
+                      )}
+                    </motion.button>
                   </motion.div>
 
                   {/* Plays Badge */}
