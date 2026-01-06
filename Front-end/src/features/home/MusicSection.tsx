@@ -2,10 +2,12 @@ import { motion } from 'motion/react';
 import { Play, Pause, Sparkles } from 'lucide-react';
 import { trendingTracks, formatPlayCount, Track } from '@/data/mockMusicData';
 import { useMusic } from '@/contexts/MusicContext';
+import { useNavigate } from 'react-router-dom';
 
 export function MusicSection() {
   const tracks = trendingTracks.slice(0, 10);
   const { playTrack, setQueue, currentTrack, isPlaying, togglePlay } = useMusic();
+  const navigate = useNavigate();
 
   const handlePlayTrack = (track: Track) => {
     // If clicking the same track that's currently playing, toggle play/pause
@@ -113,7 +115,10 @@ export function MusicSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 bg-slate-900 dark:bg-purple-600 hover:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-xl font-semibold transition-all hover:shadow-lg">
+          <button
+            onClick={() => navigate('/music')}
+            className="px-8 py-3 bg-slate-900 dark:bg-purple-600 hover:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-xl font-semibold transition-all hover:shadow-lg"
+          >
             View All Tracks →
           </button>
         </motion.div>
