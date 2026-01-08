@@ -18,7 +18,7 @@ export default function App() {
     return (
         <ThemeProvider>
             <MusicProvider>
-                <BrowserRouter>
+                <BrowserRouter basename="/Music-Platform">
                     <ScrollToTop />
                     <MainLayout>
                         <Routes>
