@@ -55,6 +55,7 @@
             "@types/react-dom": "^19.2.3",
             "@vitejs/plugin-react-swc": "^3.10.2",
             "autoprefixer": "^10.4.22",
+            "gh-pages": "^6.2.0",
             "postcss": "^8.5.6",
             "tailwindcss": "^3.4.18",
             "typescript": "^5.9.3",
@@ -62,7 +63,9 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build"
+            "build": "vite build",
+            "predeploy": "npm run build",
+            "deploy": "gh-pages -d build"
       },
       "description": "This is a code bundle for Website Animation Build Prompt. The original project is available at https://www.figma.com/design/KC2efRwJNJcryCIG72JtwP/Website-Animation-Build-Prompt.",
       "main": "postcss.config.js",
